@@ -29,8 +29,7 @@ const PaymentForm = () => {
                 'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({
-                amount: amount * 100,
-                description: "test payment"
+                amount: amount * 100
             })
         }).then((res) => res.json());
 
@@ -40,8 +39,11 @@ const PaymentForm = () => {
             payment_method: {
                 card: elements.getElement(CardElement),
                 billing_details: {
-                    name: currentUser ? currentUser.displayName : 'Guest'
-                }
+                    name: currentUser ? currentUser.displayName : 'Guest',
+                    address: "Guest address"
+                    
+                },
+                description: "Guest payment description"
             }
         });
 
