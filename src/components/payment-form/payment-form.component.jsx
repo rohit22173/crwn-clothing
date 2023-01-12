@@ -42,8 +42,7 @@ const PaymentForm = () => {
                     name: currentUser ? currentUser.displayName : 'Guest',
                     address: "Guest address"
                     
-                },
-                description: "Guest payment description"
+                }
             }
         });
 
