@@ -29,12 +29,12 @@ const PaymentForm = () => {
                 'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({
-                amount: amount * 100
+                amount: amount * 100,
+                describe: "test payment"
             })
         }).then((res) => res.json());
 
         const { paymentIntent: { client_secret } } = response;
-        console.log(client_secret);
 
         const paymentResult = await stripe.confirmCardPayment(client_secret, {
             payment_method: {
@@ -47,7 +47,7 @@ const PaymentForm = () => {
 
         setIsProcessingPayment(false);
         if (paymentResult.error) {
-            alert(paymentResult.error)
+            alert("Payment Failed");
         } else {
             if (paymentResult.paymentIntent.status === 'succeeded') {
                 alert('Payment Successful')
