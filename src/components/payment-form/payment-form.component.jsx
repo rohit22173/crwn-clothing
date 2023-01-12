@@ -39,8 +39,7 @@ const PaymentForm = () => {
                 card: elements.getElement(CardElement),
                 billing_details: {
                     name: currentUser ? currentUser.displayName : 'Guest',
-                    address: "Guest address",
-                    description: "Guest payment description"
+                    address: "Guest address"
                 }
             }
         });
