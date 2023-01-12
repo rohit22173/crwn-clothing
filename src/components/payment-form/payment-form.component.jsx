@@ -28,7 +28,8 @@ const PaymentForm = () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                amount: amount * 100
+                amount: amount * 100,
+                description: "test description"
             })
         }).then((res) => res.json());
 
